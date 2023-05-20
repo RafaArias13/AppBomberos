@@ -1,0 +1,33 @@
+
+
+<header>
+  <mat-toolbar color="primary">
+    <button mat-button (click)="openLogin()">Login</button>
+    <span class="flex-spacer"></span>
+    <button mat-button (click)="openIncendio()">Incendio</button>
+    <button mat-button (click)="openLugar()">Lugar</button>
+  </mat-toolbar>
+</header>
+
+
+
+<div class="dashboard-container">
+  <div class="main-content">
+    <div class="">
+      <google-map height="650px"
+      width="100%"></google-map>
+      
+    </div>
+  </div>
+
+  <mat-sidenav mode="side" opened="true" class="sidenav">
+    <!-- Contenido del aside / panel de notificaciones -->
+  </mat-sidenav>
+
+  
+</div>
+
+<footer></footer>
+
+
+
