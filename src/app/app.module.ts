@@ -21,7 +21,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { LoginComponent } from './modulos/login/login.component';
 import { LugarComponent } from './modulos/lugar/lugar.component';
 import { IncendioComponent } from './modulos/incendio/incendio.component';
-
+import { NotificacionesComponent } from './modulos/notificaciones/notificaciones.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { IncendioComponent } from './modulos/incendio/incendio.component';
     AppComponent,
     LoginComponent,
     LugarComponent,
-    IncendioComponent
+    IncendioComponent,
+    NotificacionesComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { IncendioComponent } from './modulos/incendio/incendio.component';
     MatSnackBarModule,
     FormsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

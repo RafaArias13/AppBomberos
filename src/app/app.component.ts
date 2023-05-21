@@ -7,6 +7,7 @@ import {MatFormField} from '@angular/material/form-field'
 import { LoginComponent } from './modulos/login/login.component';
 import { LugarComponent } from './modulos/lugar/lugar.component';
 import { IncendioComponent } from './modulos/incendio/incendio.component';
+import { PlacesService } from './services/places.service';
 
 declare const google: any;
 @Component({
@@ -24,17 +25,18 @@ export class AppComponent {
   };
 
   constructor(private incendioService: IncendiosService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private placeService: PlacesService
     ) {}
 
   ngOnInit(): void {
-    this.getIncendios();
+    
   }
 
   getIncendios(){
 
     this.incendioService.getIncendios().subscribe(data=>{
-      console.log(data);
+      //console.log(data);
     })
   }
 
