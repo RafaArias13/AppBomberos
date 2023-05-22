@@ -66,10 +66,19 @@ export class AppComponent {
     this.longitude = longitude;
     this.latitude = latitude;
 
-    this.map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
-      center: { lat: latitude, lng: longitude },
-      zoom: 15,
-    });
+    if(this.longitude === 0 || this.latitude === 0){
+      this.map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+        zoom: 15,
+      });
+    }
+    else{
+      this.map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+        center: { lat: latitude, lng: longitude },
+        zoom: 15,
+      });
+    }
+
+    
   }
 
   getLugar(){
