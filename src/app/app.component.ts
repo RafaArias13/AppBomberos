@@ -40,11 +40,13 @@ export class AppComponent {
     private placeService: PlacesService,
     
     ) {
-      this.getUserLocation();
+      //this.getUserLocation();
     }
 
   ngOnInit(): void {
-    
+    this.map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+          // zoom: 15
+        });
   }
 
   getUserLocation() {
@@ -54,7 +56,11 @@ export class AppComponent {
         // Utiliza la geolocalización según tus necesidades
         // Por ejemplo, puedes llamar a una función para cargar el mapa con estas coordenadas
         
-        this.loadMapWithCoordinates(this.userLocation[0], this.userLocation[1]);
+        //this.loadMapWithCoordinates(this.userLocation[0], this.userLocation[1]);
+
+        // this.map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+        //   // zoom: 15
+        // });
       })
       .catch((error) => {
         console.log(error);
