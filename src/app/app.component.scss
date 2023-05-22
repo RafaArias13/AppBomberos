@@ -10,6 +10,7 @@
   
   .sidenav {
     width: 340px;
+    overflow: auto;
   }
   
   .main-content {
@@ -31,11 +32,12 @@
 .map-container {
   height: 657px;
   width: 100%;
+  overflow: auto;
 }
 
-.map-container {
-  height: 500% !important;
-  width: 100% !important;
-  position: relative !important;
-  overflow: hidden !important;
-}
+// .map-container {
+//   height: 500% !important;
+//   width: 100% !important;
+//   position: relative !important;
+//   overflow: hidden !important;
+// }

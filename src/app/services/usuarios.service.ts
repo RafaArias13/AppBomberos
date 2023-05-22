@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 const httpOption = {
   headers: new HttpHeaders({
-    'Contend-Type': 'application/json'
+    'Contend-Type': 'application/x-www-form-urlencoded'
   })
 }
 
@@ -26,7 +26,7 @@ export class UsuariosService {
     this.usuario.username = user;
     this.usuario.password = pass;
 
-    return this.http.post<any>(`${this.ruta}/login`, this.usuario , httpOption);
+    return this.http.post<any>(`${this.ruta}/login`, this.usuario, httpOption);
   }
 
 

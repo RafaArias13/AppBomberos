@@ -24,6 +24,8 @@ import { IncendioComponent } from './modulos/incendio/incendio.component';
 import { NotificacionesComponent } from './modulos/notificaciones/notificaciones.component';
 import {MatCardModule} from '@angular/material/card';
 import { NgLeafletModule } from '@mugan86/ng-leaflet';
+import { VerificarComponent } from './modulos/verificar/verificar.component';
+import { EstadosComponent } from './modulos/estados/estados.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { NgLeafletModule } from '@mugan86/ng-leaflet';
     LoginComponent,
     LugarComponent,
     IncendioComponent,
-    NotificacionesComponent
+    NotificacionesComponent,
+    VerificarComponent,
+    EstadosComponent
   ],
   imports: [
     BrowserModule,

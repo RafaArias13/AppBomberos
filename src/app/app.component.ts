@@ -37,7 +37,8 @@ export class AppComponent {
 
   constructor(private incendioService: IncendiosService,
     private dialog: MatDialog,
-    private placeService: PlacesService
+    private placeService: PlacesService,
+    
     ) {
       this.getUserLocation();
     }
@@ -70,8 +71,6 @@ export class AppComponent {
       zoom: 15,
     });
   }
-
-  
 
   getLugar(){
     console.log(this.placeService.useLocation);

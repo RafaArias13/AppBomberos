@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { GetIncendios } from 'src/app/modelos/get-incendios';
-import { Iincendios } from 'src/app/modelos/iincendios';
 import { IncendiosService } from 'src/app/services/incendios.service';
 import { PlacesService } from 'src/app/services/places.service';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { VerificarComponent } from '../verificar/verificar.component';
 
 @Component({
   selector: 'app-notificaciones',
@@ -21,7 +22,8 @@ export class NotificacionesComponent {
   userLocation: [number, number] = [0,0];
 
   constructor(private incendioService: IncendiosService,
-    private placeService: PlacesService) {
+    private placeService: PlacesService,
+    private dialog: MatDialog,) {
 
 
   }
@@ -98,6 +100,18 @@ export class NotificacionesComponent {
     this.latitude = latitude;
 
   }
+
+  openVerificar(id:string){
+    const dialogRef: MatDialogRef<any> = this.dialog.open(VerificarComponent, {
+      data: { valor: id }
+    });
+  }
+
+  // openEstado(id:string){
+  //   const dialogRef: MatDialogRef<any> = this.dialog.open(VerificarComponent, {
+  //     data: { valor: id }
+  //   });
+  // }
 }
 
 

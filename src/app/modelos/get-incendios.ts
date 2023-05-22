@@ -4,6 +4,6 @@ export interface GetIncendios {
     direccion: string,
     riesgo: string,
     estatus: string,
-    revisado: string,
+    revisado: boolean,
     id: string
 }
