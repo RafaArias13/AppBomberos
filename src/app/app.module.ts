@@ -23,6 +23,7 @@ import { LugarComponent } from './modulos/lugar/lugar.component';
 import { IncendioComponent } from './modulos/incendio/incendio.component';
 import { NotificacionesComponent } from './modulos/notificaciones/notificaciones.component';
 import {MatCardModule} from '@angular/material/card';
+import { NgLeafletModule } from '@mugan86/ng-leaflet';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import {MatCardModule} from '@angular/material/card';
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatCardModule
+    MatCardModule,
+    NgLeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,7 +21,7 @@ export class PlacesService {
         ({coords}) => {
           this.useLocation = [coords.longitude, coords.latitude],
           resolve(this.useLocation);
-          //console.log(this.useLocation);
+          
         },
         (err)=>{
           alert('No se pudo obtener la geolocalización.');

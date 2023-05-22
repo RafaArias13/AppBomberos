@@ -18,6 +18,17 @@ declare const google: any;
 export class AppComponent {
   title = 'appIncendios';
 
+  latitude: number = 0;
+  longitude: number = 0;
+  center = {lat: this.latitude, lng: this.longitude}
+
+  height = "660px";
+  width = "100%";
+
+  map?: google.maps.Map;
+  
+
+  userLocation: [number, number] = [0,0];
   mapStyles = {
     width: '100%',
     height: '400px',
@@ -27,17 +38,43 @@ export class AppComponent {
   constructor(private incendioService: IncendiosService,
     private dialog: MatDialog,
     private placeService: PlacesService
-    ) {}
+    ) {
+      this.getUserLocation();
+    }
 
   ngOnInit(): void {
     
   }
 
-  getIncendios(){
+  getUserLocation() {
+    this.placeService.getUserLocation()
+      .then((location: [number, number]) => {
+        this.userLocation = location;
+        // Utiliza la geolocalización según tus necesidades
+        // Por ejemplo, puedes llamar a una función para cargar el mapa con estas coordenadas
+        
+        this.loadMapWithCoordinates(this.userLocation[0], this.userLocation[1]);
+      })
+      .catch((error) => {
+        console.log(error);
+        // Maneja el error de obtener la geolocalización
+      });
+  }
 
-    this.incendioService.getIncendios().subscribe(data=>{
-      //console.log(data);
-    })
+  loadMapWithCoordinates(longitude: number, latitude: number) {
+    this.longitude = longitude;
+    this.latitude = latitude;
+
+    this.map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+      center: { lat: latitude, lng: longitude },
+      zoom: 15,
+    });
+  }
+
+  
+
+  getLugar(){
+    console.log(this.placeService.useLocation);
   }
 
   openLogin(){

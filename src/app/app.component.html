@@ -1,4 +1,3 @@
-
 <header>
   <mat-toolbar color="primary">
     <button mat-button (click)="openLogin()">Login</button>
@@ -12,9 +11,8 @@
 <div class="dashboard-container">
   <div class="main-content">
     <div class="">
-      <google-map height="650px"
-      width="100%"></google-map>
-      
+      <div id="map" [style.height]="height" [style.width]="width"></div>
+
     </div>
   </div>
 
@@ -22,10 +20,7 @@
     <app-notificaciones></app-notificaciones>
   </mat-sidenav>
 
-  
+
 </div>
 
 <footer></footer>
-
-
-

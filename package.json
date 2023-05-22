@@ -21,7 +21,10 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "@mugan86/ng-leaflet": "^0.5.1",
     "@types/googlemaps": "^3.43.3",
+    "leaflet": "^1.9.4",
+    "newrelic": "^10.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
