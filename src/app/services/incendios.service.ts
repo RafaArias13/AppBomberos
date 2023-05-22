@@ -21,4 +21,8 @@ export class IncendiosService {
   getIncendios(): Observable<any>{
     return this.http.get<any>(`${this.ruta}/incendios`, httpOption);
   }
+
+  postIncendio(id:string):Observable<any>{
+    return this.http.patch<any>(`${this.ruta}/incendio/${id}/verificar?real=true||false`, httpOption);
+  }
 }
